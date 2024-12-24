@@ -35,6 +35,9 @@ fn main() {
             print_help();
         } else if args[1].as_str() == MS_SWITCH {
             println!("{:?}", get_unix_timestamp_ms());
+        } else {
+            println!("Invalid Input.");
+            print_help();
         }
     } else {
         print_help();
