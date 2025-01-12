@@ -1,13 +1,6 @@
 # TSTAMPER
 
-`TSTAMPER` (Pronounced "tee-stamper") is a super simple command line utility written in the [rust](https://www.rust-lang.org) programming language for quickly retrieving the current unix timestamp. I wrote this program to avoid continually opening a browser and typing in google just to snag the current timestamp. 
-
-**Future Features**
-
-In time, I intend on adding the following features:
-
-- Support for ISO 8601 formatting
-- Support for local timezones
+`TSTAMPER` (Pronounced "tee-stamper") is a super simple command line utility written in the [rust](https://www.rust-lang.org) programming language for quickly retrieving the current timestamp in different formats. I wrote this program to avoid continually opening a browser and typing in google just to snag the current timestamp.
 
 # Install
 
@@ -23,12 +16,22 @@ After this, you're good to go.
 
 # Use
 
-To use the program, there are currently two switches:
+By default, calling `tstamper` will return the current time as a UNIX timestamp, in seconds since epoch.
+
+The following options are supported for changing the output format of `tstamper`:
 
 - `-h` -> Show the program help
 - `--ms` -> Output the UNIX timestamp in ms since epoch, instead of seconds.
+- `--iso8601` -> Output the current local time in ISO8601/RFC3339 format with offset from UTC
+- `--iso8601-ms` -> Output current UTC time in the ISO8601/RFC3339 format. (Still includes 00:00 offset)
 
-Running `tstamper` without arguments outputs the time since UNIX epoch in seconds. Adding the `--ms` switch outputs the timestamp in ms.
+Only one option per call to `tstamper` is currently supported. For example:
+
+`tstamper --ms` -> Valid ✔️
+
+`tstamper --ms --iso8601` -> NOT valid ❌
+
+# Example Usage
 
 **Output in seconds:**
 ```
